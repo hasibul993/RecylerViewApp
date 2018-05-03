@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
 
-    public static final String BASE_URL = "https://storage.googleapis.com/";//https://storage.googleapis.com/
+    public static final String BASE_URL = "BASE URI";
 
 
     private static Retrofit retrofit = null;
@@ -22,7 +22,7 @@ public class ApiClient {
 
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             // set your desired log level
-            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+            logging.setLevel(HttpLoggingInterceptor.Level.HEADERS);
 
 
             OkHttpClient client = new OkHttpClient.Builder()
