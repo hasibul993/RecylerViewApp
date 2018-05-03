@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/searchSongET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/searchET"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:drawableBottom="@android:color/transparent"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="Type song name"
+            android:inputType="textCapWords|textMultiLine"
+            android:singleLine="true"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="14dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <include
+        layout="@layout/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchSongET" />
+
+</RelativeLayout>
