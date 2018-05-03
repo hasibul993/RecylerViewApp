@@ -29,7 +29,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.song_adapter_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_row, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
 
