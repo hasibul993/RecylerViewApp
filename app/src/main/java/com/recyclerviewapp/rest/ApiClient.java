@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
 
-    public static final String BASE_URL = "https://storage.googleapis.com/";
+    public static final String BASE_URL = "base uri";
 
 
     private static Retrofit retrofit = null;
