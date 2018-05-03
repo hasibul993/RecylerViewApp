@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -16,6 +17,7 @@ import com.google.gson.Gson;
 import com.recyclerviewapp.Adapter.CustomAdapter;
 import com.recyclerviewapp.Database.DatabaseAccess;
 import com.recyclerviewapp.Helper.DividerItemDecoration;
+import com.recyclerviewapp.Helper.GridDividerDecoration;
 import com.recyclerviewapp.Model.Model;
 import com.recyclerviewapp.rest.ApiClient;
 import com.recyclerviewapp.rest.ApiInterface;
@@ -102,6 +104,21 @@ public class MainActivity extends AppCompatActivity {
             customAdapter = new CustomAdapter(MainActivity.this, modelArrayList);
             recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
             recyclerView.addItemDecoration(new DividerItemDecoration(MainActivity.this, DividerItemDecoration.VERTICAL_LIST, 0, 1));
+            recyclerView.setAdapter(customAdapter);
+            customAdapter.notifyDataSetChanged();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void SetGridAdapter(ArrayList<Model> modelArrayList) {
+        try {
+            customAdapter = new CustomAdapter(MainActivity.this, modelArrayList);
+            // set a GridLayoutManager with default vertical orientation and 2 number of columns
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),2);
+            recyclerView.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
+            gridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL); // set Vertical Orientation
+            recyclerView.addItemDecoration(new GridDividerDecoration(MainActivity.this));
             recyclerView.setAdapter(customAdapter);
             customAdapter.notifyDataSetChanged();
         } catch (Exception ex) {
